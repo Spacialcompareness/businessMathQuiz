@@ -40,7 +40,7 @@ def correctResult(answer, sign1, unit, sign2):
 def wrongResult(answer, sign1, unit, sign2):
     print('No, unfortunately the answer is ' + sign1 + '{:,.2f}'.format(answer) + unit + sign2)
     simpleInterestMenu(simpleIntOptions, 20, 20)
-    subMenuChoice = int(input('\nWhat type of questions do you want to practice wiht? '))
+    subMenuChoice = int(input('\nWhat type of questions do you want to practice with? '))
 
 def findSimInterest(principal, rate, time):          #Function to find the simple interest
     answer = round(float(principal * rate / 100 * time / 12), 2)
