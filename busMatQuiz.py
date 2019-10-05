@@ -5,41 +5,23 @@ import time, random
 mainMenuChoice = int(0)
 subMenuChoice = int(00)
 #principal, rate, time, interest = 0, 0, 0, 0
+randomprincipal, randomrate, randomtime, randominterest = 0, 0, 0, 0
+#def randomVariables():
+#    randomprincipal, randomrate, randomtime, randominterest = random.randint(1, 100), round(float(random.randint(1, 100)), 2), random.randint(1, 240), float(random.randint(1, 100))
 
 def menu(optionAlign, leftWidth, rightWidth):
     for k, v in optionAlign.items():
         print(str(v).ljust(leftWidth, '_') + k.rjust(rightWidth, '_'))
     #print('\n')
 
-def simpleInterestMenu(optionAlign, leftWidth, rightWidth):
-    for k, v in optionAlign.items():
-        print(str(v).ljust(leftWidth, '_') + k.rjust(rightWidth, '_'))
-        #print('\n')
-
-def simPrin():
-    principal = random.randint(1, 100)
-    return principal
-
-def simRate():
-    rate = round(float(random.randint(1, 100)), 2)
-    return rate
-
-def simTime():
-    time = random.randint(1, 240)
-    return time
-
-def simInterest():
-    interest = float(random.randint(1, 100))
-    return interest
-
 def correctResult(answer, sign1, unit, sign2):
     print('You are correct! The answer is ' + sign1 + '{:.2f}'.format(answer) + unit + sign2)
-    simpleInterestMenu(simpleIntOptions, 20, 20)
+    menu(simpleIntOptions, 20, 20)
     subMenuChoice = int(input('\nWhat type of question do you want to practice with? '))
 
 def wrongResult(answer, sign1, unit, sign2):
     print('No, unfortunately the answer is ' + sign1 + '{:,.2f}'.format(answer) + unit + sign2)
-    simpleInterestMenu(simpleIntOptions, 20, 20)
+    menu(simpleIntOptions, 20, 20)
     subMenuChoice = int(input('\nWhat type of questions do you want to practice with? '))
 
 def findSimInterest(principal, rate, time):          #Function to find the simple interest
@@ -88,24 +70,24 @@ while mainMenuChoice != 999:
     mainMenuChoice = int(input('\nWhat topic would you like to cover? Press \'999\' to quit.'))
 
     if mainMenuChoice == 1:             #Simple Interest Quiz Options
-        simpleInterestMenu(simpleIntOptions, 25, 25)
+        menu(simpleIntOptions, 25, 25)
         subMenuChoice = int(input('\nWhat type of question do you want to practice with? '))
 
         if subMenuChoice == 1:         #Find the Simple Interest
             while subMenuChoice == 1:
-                findSimInterest(simPrin(), simRate(), simTime())
+                findSimInterest(randomprincipal, randomrate, randomtime)
 
         elif subMenuChoice == 2:        #Find the Principal
             while subMenuChoice == 2:
-                findSimPrincipal(simRate(), simTime(), simInterest())
+                findSimPrincipal(randomrate, randomtime, randominterest)
 
         elif subMenuChoice == 3:         #Find the Time
             while subMenuChoice == 3:
-                findSimTime(simPrin(), simRate(), simInterest())
+                findSimTime(randomprincipal, randomrate, randominterest)
 
         elif subMenuChoice == 4:        #Find the Rate
             while subMenuChoice == 4:
-                findSimRate(simPrin(), simInterest(), simTime())
+                findSimRate(randomprincipal, randominterest, randomtime)
 
         elif subMenuChoice == 5:        #Return to Main Menu
             continue
