@@ -1,7 +1,7 @@
 #! python3
 #busMatQuiz.py is a quiz program for first year university business math courses
 
-import time, random
+"""import time, random
 mainMenuChoice = int(0)
 subMenuChoice = int(00)
 #principal, rate, time, interest = 0, 0, 0, 0
@@ -119,4 +119,6 @@ while mainMenuChoice != 999:
     elif mainMenuChoice == 999:
         break
     else:
-        print('Not a valid option. Try again or select \'999\' to exit.')
+        print('Not a valid option. Try again or select \'999\' to exit.')"""
+
+THESE ARE CHANGES
